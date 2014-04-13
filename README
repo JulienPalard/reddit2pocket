@@ -1,0 +1,5 @@
+Simply put something like this in your crontab (crontab -e) :
+
+42 4        *   *   * python /home/......./reddit2pocket.py your_email programming ProgrammerHumor shittyprogramming‎
+
+And this scripts will bind the given sub-reddits to your pocket account.
