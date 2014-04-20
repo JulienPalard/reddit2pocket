@@ -22,5 +22,5 @@ for subreddit in sys.argv[2:]:
     feed = feedparser.parse('http://www.reddit.com/r/%s/top/.rss?sort=top&t=week' % subreddit)
     for i in range(5):
         entry = feed['entries'][i]
-        source = re.findall(r'href=(["\'])(.*?)\1', entry['summary'])[1][1]
+        source = re.findall(r'submitted by <a href.*?href=(["\'])(.*?)\1', entry['summary'])[0][1]
         send_to_pocket(sys.argv[1], source)
